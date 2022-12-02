@@ -2,13 +2,12 @@ const express = require('express')
 const dotenv = require("dotenv");
 const userRoutes = require('./routes/userRoutes')
 const {connectDB} = require('./config/db')
-const compression = require('compression');
-const sendEmail = require('./utils/email');
+const compression = require('compression')
+const sendEmail = require('./utils/email')
 const app = express()
 
-dotenv.config();
+dotenv.config()
 connectDB()
-sendEmail();
 
 app.use(compression())
 app.use(express.json())
